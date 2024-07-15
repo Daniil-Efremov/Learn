@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="date" id="chosenDate"> <br><br>    
+    <button id="dateButton">Разница(в днях) текущей даты с выбранной вовод в консоль</button>
+    <script>
+        document.addEventListener("DOMContentLoaded", ()=>{
+            var
+                currentDate = new Date();
+                
+            function compareDate(){
+                let 
+                    dateInput = document.getElementById("chosenDate").value,
+                    chosenDate = new Date(dateInput),
+                    timeDiff = 0,
+                    dayDiff = 0;
+    
+                
+                console.log("Текущая дата: " + currentDate);
+                console.log("Выбранная дата: " + chosenDate);
+                timeDiff =  Math.abs(currentDate.getTime() - chosenDate.getTime());
+                dayDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+                console.log("Разница в днях: " + dayDiff);
+            }
+        document.getElementById("dateButton").addEventListener("click", ()=>{
+            compareDate();
+        } );
+        });
+    </script>
+</body>
+</html>

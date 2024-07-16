@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="dates">
+        <h2>Разница дат</h2>
+        <input type="date" id="chosenDate"> <br><br>    
+        <button id="dateButton">Разница(в днях) текущей даты<br> с выбранной (вывод в консоль)</button>
+    </div>
+    <br>
+    <div class="calc">
+        <h2>Калькулятор</h2>
+        <input type="number" placeholder="Число 1" id="n1"></input>
+        <input type="number" placeholder="Число 2" id ="n2"></input> <br> <br>
+        <button id="add">Сложить</button> <br> <br>
+        <button id="sub">Вычесть</button> <br> <br>
+        <button id="mult">Умножить</button> <br> <br>
+        <button id="divi">Разделить</button> <br> <br>
+        <button id="exp">Возвести в степень</button> <br> <br>
+        <button id="root">Взять корень</button> <br> <br>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", ()=>{
+            var
+                add = document.getElementById("add"),
+                sub = document.getElementById("sub"),
+                mult = document.getElementById("mult"),
+                divi = document.getElementById("divi"),
+                exp = document.getElementById("exp"),
+                root = document.getElementById("root"),
+                n1 = document.getElementById("n1"),
+                n2 = document.getElementById("n2"),
+
+                currentDate = new Date();
+               
+
+            function compareDate(){
+                let 
+                    dateInput = document.getElementById("chosenDate").value,
+                    chosenDate = new Date(dateInput),
+                    timeDiff = 0,
+                    dayDiff = 0;  
+
+                console.log("Текущая дата: " + currentDate);
+                console.log("Выбранная дата: " + chosenDate);
+                timeDiff =  Math.abs(currentDate.getTime() - chosenDate.getTime());
+                dayDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+                console.log("Разница в днях: " + dayDiff);
+            };
+
+            function addition(num1, num2){
+                console.log("Сумма чисел = ");
+                console.log(parseInt(num1.value) + parseInt(num2.value));
+            };
+
+            function subtraction(num1 , num2){
+                console.log("Вычитание чисел = ");
+                console.log(parseInt(num1.value) - parseInt(num2.value));
+            };
+
+            function multiply(num1, num2){
+                console.log("Перемножение чисел = ");
+                console.log(parseInt(num1.value) * parseInt(num2.value));
+            };
+
+            function divide(num1, num2){
+                console.log("Деление чисел = ");
+                console.log(parseInt(num1.value) / parseInt(num2.value));
+            };
+
+            function exponentientiate(num1, num2){
+                console.log("Возведение числа в степень = ");
+                console.log(parseInt(num1.value) ** parseInt(num2.value));
+            };
+
+            function takeRoot(num1, num2){
+                console.log("Корень числа = ");
+                console.log(parseInt(num1.value) **(1 / parseInt(num2.value)));
+            };
+            
+        document.getElementById("dateButton").addEventListener("click", ()=>{
+            compareDate();
+        } );
+        
+        add.addEventListener("click",()=>{
+            addition(n1, n2);
+        });
+        sub.addEventListener("click",()=>{
+            subtraction(n1, n2);
+        });
+        mult.addEventListener("click",()=>{
+            multiply(n1, n2);
+        });
+        divi.addEventListener("click",()=>{
+            divide(n1, n2);
+        });
+        exp.addEventListener("click",()=>{
+            exponentientiate(n1, n2);
+        });
+        root.addEventListener("click",()=>{
+            takeRoot(n1, n2);
+        });
+});
+    </script>
+</body>
+</html>

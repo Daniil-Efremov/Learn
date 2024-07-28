@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анимации</title>
+    <style>
+
+        .yellowRect{
+            width: 200px;
+            height: 30px;
+            background-color: yellow;
+            margin: 25px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .redRect{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin: 25px;
+            opacity:0;
+            /* animation-fill-mode: forwards; */
+        }
+     
+    </style>
+</head>
+<body>
+    <div class="yellowRect" id="yellowRect">
+        Клик для fade-in анимации
+    </div>
+    <div class="redRect" id="redRect">
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", ()=>{
 
     const prom = new Promise((resolve, reject)=>{
-        let x = 3;
+        let x = 5;
         if(x >= 5){
             resolve("resolve: x>=5")
         }else{
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             })
     }).then((response)=> console.log(response))
     .catch((error)=> console.log(error))
-    .catch((error)=>console.log(error));
+    .catch((error)=>console.log(error))
     .finally(console.log("finally"));
 
 });
